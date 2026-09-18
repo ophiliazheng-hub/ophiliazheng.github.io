@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Songyi Zheng — analyst intern candidate for e-commerce and data-informed commercial teams.">
+  <title>Songyi Zheng | E-commerce Analyst Intern Candidate</title>
+  <style>
+    :root {
+      --navy: #0b1f33;
+      --green: #1ea896;
+      --mist: #dff7f1;
+      --paper: #f7fafc;
+      --white: #ffffff;
+      --ink: #34495a;
+      --muted: #5b6b79;
+      --line: #dbe5ec;
+      --signal: #c56f52;
+      --page: min(1080px, calc(100% - 40px));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.58;
+    }
+    ::selection { color: var(--white); background: var(--green); }
+    a { color: inherit; }
+    img { max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+    .container { width: var(--page); margin-inline: auto; }
+
+    .skip-link {
+      position: fixed;
+      top: -60px;
+      left: 16px;
+      z-index: 50;
+      padding: 9px 13px;
+      color: var(--white);
+      background: var(--navy);
+    }
+    .skip-link:focus { top: 12px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .brand span { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 21px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--green); }
+    .nav-links .contact-link {
+      padding: 6px 11px;
+      border: 1px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .hero {
+      padding: 54px 0 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 265px;
+      gap: 64px;
+      align-items: center;
+    }
+    .role-line {
+      margin-bottom: 17px;
+      color: var(--green);
+      font-size: 0.92rem;
+      font-weight: 720;
+    }
+    h1 {
+      max-width: 760px;
+      margin-bottom: 21px;
+      color: var(--navy);
+      font-size: clamp(2.55rem, 5.6vw, 4.85rem);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.01;
+    }
+    .hero-summary {
+      max-width: 710px;
+      margin-bottom: 23px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button {
+      display: inline-flex;
+      min-height: 41px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      border: 1px solid var(--navy);
+      color: var(--white);
+      background: var(--navy);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button.secondary { color: var(--navy); background: transparent; }
+    .button:hover,
+    .button:focus-visible { border-color: var(--green); color: var(--white); background: var(--green); }
+    .portrait {
+      position: relative;
+      margin: 0;
+      border: 9px solid var(--white);
+      box-shadow: 13px 13px 0 var(--mist);
+    }
+    .portrait img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 50% 28%;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 44px;
+      border-top: 1px solid var(--line);
+      background: var(--white);
+    }
+    .highlight { padding: 17px 21px 18px 0; border-right: 1px solid var(--line); }
+    .highlight:not(:first-child) { padding-left: 21px; }
+    .highlight:last-child { border-right: 0; }
+    .highlight strong {
+      display: block;
+      margin-bottom: 1px;
+      color: var(--navy);
+      font-size: 1.02rem;
+      font-weight: 750;
+    }
+    .highlight span { color: var(--muted); font-size: 0.82rem; }
+
+    .section { padding: 60px 0; border-bottom: 1px solid var(--line); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+    .section-label {
+      margin: 3px 0 0;
+      color: var(--green);
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+    h2 {
+      max-width: 760px;
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.06;
+    }
+    .section-summary { max-width: 760px; margin-bottom: 0; color: var(--muted); }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      border-top: 1px solid var(--navy);
+      border-bottom: 1px solid var(--line);
+    }
+    .profile-copy { padding: 25px 38px 25px 0; border-right: 1px solid var(--line); }
+    .profile-copy p { margin-bottom: 12px; }
+    .profile-copy p:last-child { margin-bottom: 0; }
+    .focus-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .focus-item { padding: 23px 0 23px 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .focus-item:nth-child(even) { border-right: 0; }
+    .focus-item:nth-last-child(-n+2) { border-bottom: 0; }
+    .focus-item h3 { margin-bottom: 5px; color: var(--navy); font-size: 1.03rem; font-weight: 750; }
+    .focus-item p { margin: 0; color: var(--muted); font-size: 0.86rem; }
+
+    .work-section { background: var(--mist); }
+    #work > .container { display: flex; flex-direction: column; }
+    #work .section-head { order: 1; }
+    #work .analysis-strip { order: 2; margin-top: 0; margin-bottom: 18px; }
+    #work .work-grid { order: 3; }
+    .work-grid { display: grid; grid-template-columns: 1.18fr 0.82fr; gap: 18px; }
+    .work-item { padding: 27px; border-top: 4px solid var(--navy); background: var(--white); }
+    .work-item.secondary-work { border-top-color: var(--green); }
+    .work-meta { margin-bottom: 13px; color: var(--green); font-size: 0.8rem; font-weight: 700; }
+    .work-item h3 { margin-bottom: 10px; color: var(--navy); font-size: 1.45rem; font-weight: 650; line-height: 1.2; letter-spacing: -0.025em; }
+    .work-item > p { color: var(--muted); }
+    .work-detail { margin-top: 20px; border-top: 1px solid var(--line); }
+    .work-detail div { display: grid; grid-template-columns: 100px 1fr; gap: 15px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+    .work-detail b { color: var(--green); font-size: 0.8rem; }
+    .work-detail span { font-size: 0.88rem; }
+    .analysis-strip {
+      margin-top: 18px;
+      padding: 22px 0 20px;
+      border-top: 1px solid var(--navy);
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+    .analysis-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: end;
+      padding: 0 22px 17px;
+    }
+    .analysis-kicker { margin-bottom: 4px; color: var(--green); font-size: 0.78rem; font-weight: 720; }
+    .analysis-intro h3 {
+      max-width: 650px;
+      margin-bottom: 5px;
+      color: var(--navy);
+      font-size: clamp(1.32rem, 2.4vw, 1.85rem);
+      font-weight: 650;
+      line-height: 1.15;
+    }
+    .analysis-intro p:last-child { margin: 0; color: var(--muted); font-size: 0.84rem; }
+    .track-controls { display: flex; gap: 7px; }
+    .track-button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--navy);
+      border-radius: 50%;
+      color: var(--navy);
+      background: var(--white);
+      font: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .track-button:hover,
+    .track-button:focus-visible { color: var(--white); background: var(--navy); }
+    .workflow-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 238px;
+      gap: 10px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-behavior: smooth;
+      scroll-snap-type: inline mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--green) var(--mist);
+      padding: 11px 22px 15px;
+    }
+    .workflow-card {
+      position: relative;
+      min-height: 210px;
+      padding: 28px 17px 16px;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--navy);
+      scroll-snap-align: start;
+      background: var(--paper);
+    }
+    .workflow-card::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -12px;
+      left: 15px;
+      display: grid;
+      width: 25px;
+      height: 25px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 750;
+    }
+    .workflow-card.outcome-card { border-top-color: var(--signal); background: #fbf5f2; }
+    .workflow-card.outcome-card::before { background: var(--signal); }
+    .workflow-card.decision-card { border-top-color: var(--green); background: #f1f7f5; }
+    .workflow-card.decision-card::before { background: var(--green); }
+    .workflow-stage { margin-bottom: 11px; color: var(--muted); font-size: 0.76rem; font-weight: 700; }
+    .workflow-value {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 1.72rem;
+      font-weight: 650;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      font-variant-numeric: tabular-nums;
+    }
+    .outcome-card .workflow-value { color: var(--signal); }
+    .workflow-copy { min-height: 61px; margin-bottom: 12px; color: var(--ink); font-size: 0.79rem; line-height: 1.38; }
+    .workflow-evidence { display: flex; flex-wrap: wrap; gap: 5px 12px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.71rem; line-height: 1.35; }
+    .workflow-evidence b { color: var(--navy); font-weight: 750; }
+    .analysis-footnote { margin: 0; padding: 0 22px; color: var(--muted); font-size: 0.74rem; }
+
+    .experience-list { border-top: 1px solid var(--navy); }
+    .role {
+      display: grid;
+      grid-template-columns: 155px 0.8fr 1.3fr;
+      gap: 26px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .role-date { color: var(--green); font-size: 0.82rem; font-weight: 720; }
+    .role h3 { margin-bottom: 4px; color: var(--navy); font-size: 1.08rem; font-weight: 750; }
+    .role-title { margin: 0; color: var(--muted); font-size: 0.85rem; }
+    .role ul { margin: 0; padding-left: 17px; font-size: 0.91rem; }
+    .role li { margin-bottom: 5px; }
+
+    .compact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .compact-block h2 { font-size: clamp(1.8rem, 3vw, 2.45rem); }
+    .skill-columns { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--navy); }
+    .skill-list { margin: 0; padding: 18px 20px 0 0; list-style: none; }
+    .skill-list + .skill-list { padding-left: 20px; border-left: 1px solid var(--line); }
+    .skill-list li { padding: 6px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.87rem; }
+    .education-list { border-top: 1px solid var(--navy); }
+    .education { padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .education strong { display: block; color: var(--navy); font-size: 0.97rem; font-weight: 750; }
+    .education span { display: block; color: var(--muted); font-size: 0.83rem; }
+
+    .contact-section { padding: 55px 0; color: var(--white); background: var(--navy); }
+    .contact-grid { display: grid; grid-template-columns: 0.55fr 1.45fr; gap: 46px; align-items: end; }
+    .contact-section .section-label { color: #8fd2c3; }
+    .contact-section h2 { color: var(--white); }
+    .contact-section p { max-width: 700px; color: #d4e0e7; }
+    .contact-section .button { border-color: var(--white); background: var(--white); color: var(--navy); }
+    .contact-section .button.secondary { color: var(--white); background: transparent; }
+    footer { padding: 19px 0; color: var(--muted); font-size: 0.8rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; }
+    :focus-visible { outline: 3px solid #73b7ff; outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html, .workflow-track { scroll-behavior: auto; }
+    }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr 215px; gap: 36px; }
+      .section-head { grid-template-columns: 130px 1fr; gap: 25px; }
+      .role { grid-template-columns: 125px 0.75fr 1.25fr; gap: 18px; }
+      .compact-grid { gap: 30px; }
+    }
+    @media (max-width: 650px) {
+      :root { --page: min(100% - 28px, 1080px); }
+      .site-header { position: static; }
+      .nav { align-items: flex-start; padding: 14px 0; }
+      .nav-links { max-width: 290px; justify-content: flex-end; flex-wrap: wrap; gap: 8px 14px; }
+      .nav-links .contact-link { padding: 0; border: 0; }
+      .hero { padding-top: 40px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .portrait { width: 210px; grid-row: 1; }
+      .hero-grid > div { grid-row: 2; }
+      .highlights, .profile-grid, .work-grid, .compact-grid, .contact-grid { grid-template-columns: 1fr; }
+      .highlight { border-right: 0; border-bottom: 1px solid var(--line); }
+      .highlight:not(:first-child) { padding-left: 0; }
+      .section { padding: 48px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 7px; margin-bottom: 23px; }
+      .profile-copy { padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .focus-item:nth-child(even) { padding-right: 0; }
+      .role { grid-template-columns: 1fr; gap: 6px; }
+      .compact-grid { gap: 42px; }
+      .contact-grid { gap: 16px; }
+      .analysis-intro { grid-template-columns: 1fr; gap: 11px; }
+      .track-controls { justify-self: start; }
+      .workflow-track { grid-auto-columns: min(82vw, 250px); }
+    }
+    @media (max-width: 430px) {
+      .nav { display: block; }
+      .nav-links { justify-content: flex-start; margin-top: 8px; }
+      .focus-grid, .skill-columns { grid-template-columns: 1fr; }
+      .focus-item, .focus-item:nth-child(even), .focus-item:nth-last-child(-n+2) { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .skill-list + .skill-list { padding-left: 0; border-left: 0; }
+      .actions { display: grid; }
+      .button { width: 100%; }
+    }
+    @media print {
+      .site-header, .actions { display: none; }
+      body { font-size: 10pt; }
+      .hero, .section, .contact-section { break-inside: avoid; }
+      .section { padding: 28px 0; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top">Songyi Zheng<span> /</span></a>
+      <div class="nav-links">
+        <a href="#profile">Interview fit</a>
+        <a href="#work">Evidence</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a class="contact-link" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="role-line">Analyst intern candidate · E-commerce</p>
+          <h1>I turn customer and operational signals into decisions teams can act on.</h1>
+          <p class="hero-summary">I am Songyi Zheng, an MSc Business Analytics candidate at Nanyang Technological University. I combine Python, SQL and R with 4+ years of customer research, SaaS development and cross-functional project experience.</p>
+          <div class="actions">
+            <a class="button" href="#work">Review analytical evidence</a>
+            <a class="button secondary" href="#experience">View experience</a>
+          </div>
+        </div>
+        <figure class="portrait"><img src="assets/songyi_zheng_profile.jpg" alt="Professional portrait of Songyi Zheng"></figure>
+      </div>
+
+      <div class="container highlights" aria-label="Professional highlights">
+        <div class="highlight"><strong>Business question first</strong><span>Connect analysis to a commercial decision</span></div>
+        <div class="highlight"><strong>Python · SQL · R</strong><span>Prepare, explore and model structured data</span></div>
+        <div class="highlight"><strong>Customer + product context</strong><span>Translate evidence across technical and business teams</span></div>
+      </div>
+    </section>
+
+    <section id="profile" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label">Interview fit</p>
+          <div><h2>A practical analyst for fast-moving commercial teams.</h2><p class="section-summary">My value is the bridge between analysis and action: framing the right question, working carefully with data and explaining what the evidence means for customers and the business.</p></div>
+        </header>
+
+        <div class="profile-grid">
+          <div class="profile-copy">
+            <p>I am building formal analytical depth through NTU's MSc Business Analytics programme and applying it to regression, data preparation and visual communication.</p>
+            <p>My earlier work adds customer interviews, product requirements and stakeholder management—useful context when analysis must influence a real team.</p>
+          </div>
+          <div class="focus-grid">
+            <article class="focus-item"><h3>Customer behaviour</h3><p>Turn observed needs and behavioural patterns into testable questions.</p></article>
+            <article class="focus-item"><h3>Commercial metrics</h3><p>Structure analysis around conversion, retention, campaign and operational outcomes.</p></article>
+            <article class="focus-item"><h3>Analytical workflow</h3><p>Audit, prepare, explore, model and validate before interpreting results.</p></article>
+            <article class="focus-item"><h3>Decision communication</h3><p>Explain findings, uncertainty and next actions to mixed audiences.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section work-section">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label">Selected evidence</p>
+          <div><h2>How I move from evidence to a useful recommendation.</h2><p class="section-summary">These projects are not e-commerce case studies. They demonstrate the transferable analysis, customer understanding and stakeholder communication I would bring to an e-commerce team.</p></div>
+        </header>
+
+        <div class="work-grid">
+          <article class="work-item">
+            <p class="work-meta">Enterprise sustainability platform · Arcplus / SIADR</p>
+            <h3>Market research, value proposition and SaaS development</h3>
+            <p>Supported a building energy and carbon management platform by connecting hotel-sector needs with product direction and market positioning.</p>
+            <div class="work-detail">
+              <div><b>Research</b><span>Led client interviews and market research to identify pain points in energy and carbon data collection.</span></div>
+              <div><b>Marketing</b><span>Translated technical metrics into business value and supported product positioning, launch and promotional communication.</span></div>
+              <div><b>Development</b><span>Benchmarked ESG reporting and proposed data modules that informed platform functionality.</span></div>
+              <div><b>Recognition</b><span>The solution received a group-level New Technology Track Excellence Award.</span></div>
+            </div>
+          </article>
+
+          <article class="work-item secondary-work">
+            <p class="work-meta">Urban development and sustainability research</p>
+            <h3>Customer context and analytical communication</h3>
+            <p>Applied user behaviour analysis, competitor research and visual storytelling to support commercial development and sustainability projects.</p>
+            <div class="work-detail">
+              <div><b>Insight</b><span>Identified user needs, design trends and competitive patterns.</span></div>
+              <div><b>Communication</b><span>Presented analytical findings and recommendations to clients and internal teams.</span></div>
+              <div><b>Research</b><span>Co-authored a municipal report on carbon reduction in urban green spaces.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <section class="analysis-strip" aria-labelledby="analysis-title">
+          <div class="analysis-intro">
+            <div>
+              <p class="analysis-kicker">Gender pay &amp; rank analysis · Course project</p>
+              <h3 id="analysis-title">From a complex question to an evidence-based interpretation.</h3>
+              <p>R · data.table · ggplot2 · 261 physician records</p>
+            </div>
+            <div class="track-controls" aria-label="Scroll analysis workflow">
+              <button class="track-button" type="button" data-track-direction="-1" aria-controls="analysis-track" aria-label="View previous analysis steps">&#8592;</button>
+              <button class="track-button" type="button" data-track-direction="1" aria-controls="analysis-track" aria-label="View next analysis steps">&#8594;</button>
+            </div>
+          </div>
+
+          <div class="workflow-track" id="analysis-track" tabindex="0" aria-label="Complete data analysis workflow">
+            <article class="workflow-card" data-step="1">
+              <p class="workflow-stage">Frame the decision</p>
+              <strong class="workflow-value">Two questions</strong>
+              <p class="workflow-copy">Measure the adjusted salary gap and examine whether women are less likely to hold full-professor rank.</p>
+              <div class="workflow-evidence"><span><b>Salary</b> outcome</span><span><b>Rank</b> outcome</span></div>
+            </article>
+            <article class="workflow-card" data-step="2">
+              <p class="workflow-stage">Audit the data</p>
+              <strong class="workflow-value">261 records</strong>
+              <p class="workflow-copy">Checked missing values, blanks, duplicate physician IDs and impossible salary or experience values.</p>
+              <div class="workflow-evidence"><span><b>10</b> source variables</span><span>Integrity checks</span></div>
+            </article>
+            <article class="workflow-card" data-step="3">
+              <p class="workflow-stage">Prepare variables</p>
+              <strong class="workflow-value">Recode + derive</strong>
+              <p class="workflow-copy">Labelled categorical fields, set reference groups, logged salary and derived growth and experience bands.</p>
+              <div class="workflow-evidence"><span><b>5</b> factor recodes</span><span><b>4</b> derived fields</span></div>
+            </article>
+            <article class="workflow-card" data-step="4">
+              <p class="workflow-stage">Explore patterns</p>
+              <strong class="workflow-value">Three views</strong>
+              <p class="workflow-copy">Compared salary by gender and department, examined experience relationships and checked correlations.</p>
+              <div class="workflow-evidence"><span>Box plot</span><span>Faceted trend</span><span>Correlation</span></div>
+            </article>
+            <article class="workflow-card" data-step="5">
+              <p class="workflow-stage">Model salary</p>
+              <strong class="workflow-value">Five OLS models</strong>
+              <p class="workflow-copy">Added experience, department, credentials and rank sequentially to test how the estimate changed.</p>
+              <div class="workflow-evidence"><span><b>−31.9% → −1.8%</b></span><span>Full R² <b>93.4%</b></span></div>
+            </article>
+            <article class="workflow-card outcome-card" data-step="6">
+              <p class="workflow-stage">Model academic rank</p>
+              <strong class="workflow-value">0.374× odds</strong>
+              <p class="workflow-copy">Used logistic regression to estimate female-to-male odds of holding full-professor rank.</p>
+              <div class="workflow-evidence"><span>p <b>.0108</b></span><span>95% CI <b>.175–.797</b></span></div>
+            </article>
+            <article class="workflow-card decision-card" data-step="7">
+              <p class="workflow-stage">Interpret responsibly</p>
+              <strong class="workflow-value">Pathway insight</strong>
+              <p class="workflow-copy">Connected salary and rank evidence while separating statistical association from causal or legal proof.</p>
+              <div class="workflow-evidence"><span>Limitations</span><span>Next evidence</span><span>Stakeholder story</span></div>
+            </article>
+          </div>
+          <p class="analysis-footnote">The strongest signal is a possible career pathway behind the pay gap. Current rank is a proxy, not a recorded promotion decision, and the models do not prove discriminatory intent.</p>
+        </section>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label">Experience</p>
+          <div><h2>Customer research, product thinking and delivery experience.</h2><p class="section-summary">A non-traditional background that adds commercial context and clear stakeholder communication to my growing analytical toolkit.</p></div>
+        </header>
+
+        <div class="experience-list">
+          <article class="role">
+            <div class="role-date">Apr 2023 – Mar 2025</div>
+            <div><h3>Arcplus / SIADR</h3><p class="role-title">Product Manager / Sustainability Consultant<br>Institute of Building Sustainability</p></div>
+            <ul><li>Led hotel-sector market research and client interviews.</li><li>Developed product requirements, positioning and value propositions for an energy and carbon management SaaS platform.</li><li>Benchmarked Hilton, Marriott and IHG ESG reports to identify data needs.</li><li>Coordinated internal alignment, client communication and launch promotion.</li></ul>
+          </article>
+          <article class="role">
+            <div class="role-date">Apr 2021 – Mar 2023</div>
+            <div><h3>Arcplus / SIADR</h3><p class="role-title">Landscape Architect</p></div>
+            <ul><li>Conducted user behaviour and competitor research for urban and commercial projects.</li><li>Presented findings and design rationales to clients and internal teams.</li><li>Contributed to municipal research on carbon reduction and co-authored the final report.</li></ul>
+          </article>
+          <article class="role">
+            <div class="role-date">Nov 2020 – Mar 2021</div>
+            <div><h3>Shanghai Landau</h3><p class="role-title">Landscape Architect Assistant</p></div>
+            <ul><li>Researched residential development trends, competitors and client preferences to support proposal development.</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container compact-grid">
+        <div class="compact-block">
+          <p class="section-label">Skills</p>
+          <h2>Analytical toolkit</h2>
+          <div class="skill-columns">
+            <ul class="skill-list"><li>Business problem framing</li><li>Customer and market research</li><li>Regression analysis</li><li>Data storytelling</li><li>Stakeholder communication</li><li>Product requirement development</li></ul>
+            <ul class="skill-list"><li>Python, pandas and NumPy</li><li>SQL, Excel and R</li><li>Power BI and Tableau</li><li>Data preparation and visualisation</li><li>English, Mandarin and Cantonese</li></ul>
+          </div>
+        </div>
+
+        <div class="compact-block">
+          <p class="section-label">Education</p>
+          <h2>Academic foundation</h2>
+          <div class="education-list">
+            <article class="education"><strong>Nanyang Technological University</strong><span>MSc Business Analytics · Aug 2026 – present</span><span>Analytics Strategy, Advanced Database Management and Visualisation, Applications of Statistics</span></article>
+            <article class="education"><strong>Cornell University</strong><span>Master of Landscape Architecture · 2018–2020</span><span>2019 ASLA Student Honor Award, Top 5 of 368 globally</span></article>
+            <article class="education"><strong>Guangdong Ocean University</strong><span>Bachelor of Landscape Architecture · 2013–2018</span><span>Merit Student Scholarship and English speech contest champion</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container contact-grid">
+        <p class="section-label">Contact</p>
+        <div><h2>Looking for an analyst intern who can connect data with context?</h2><p>I am interested in e-commerce analytics roles spanning customer behaviour, commercial performance and cross-functional decision support.</p><div class="actions"><a class="button" href="mailto:SZHENG018@e.ntu.edu.sg">Email Songyi</a><a class="button secondary" href="https://www.linkedin.com/in/songyi-zheng-1058a2321/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-row"><span>Songyi Zheng · E-commerce analyst intern candidate</span><span>AN6100 · Group C</span></div></footer>
+  <script>
+    const analysisTrack = document.querySelector("#analysis-track");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll("[data-track-direction]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const direction = Number(button.dataset.trackDirection);
+        const card = analysisTrack.querySelector(".workflow-card");
+        const gap = 10;
+        analysisTrack.scrollBy({
+          left: direction * (card.offsetWidth + gap),
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
+      });
+    });
+  </script>
+</body>
+</html>
